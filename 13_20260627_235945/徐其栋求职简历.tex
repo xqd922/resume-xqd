@@ -142,11 +142,11 @@
 \vspace{0.15em}
 
 % --- 智能交互台灯 ---
-\projectblock{STM32 智能交互台灯控制系统}{2025.01 -- 2026.05}{技术栈：STM32F103C8T6\hspace{0.3em}|\hspace{0.3em}光敏ADC\hspace{0.3em}|\hspace{0.3em}HC-SR04\hspace{0.3em}|\hspace{0.3em}红外人体感应\hspace{0.3em}|\hspace{0.3em}SNR8016语音\hspace{0.3em}|\hspace{0.3em}HC-05蓝牙\hspace{0.3em}|\hspace{0.3em}PWM\hspace{0.3em}|\hspace{0.3em}OLED}
+\projectblock{STM32 智能交互台灯控制系统}{2025.01 -- 2026.05}{技术栈：STM32F103C8T6\hspace{0.3em}|\hspace{0.3em}光敏ADC\hspace{0.3em}|\hspace{0.3em}HC-SR04\hspace{0.3em}|\hspace{0.3em}SNR8016语音\hspace{0.3em}|\hspace{0.3em}HC-05蓝牙\hspace{0.3em}|\hspace{0.3em}PWM\hspace{0.3em}|\hspace{0.3em}OLED}
 
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
-    \item 以 STM32F103C8T6 为主控，集成光敏 ADC、HC-SR04 超声波、红外感应、SNR8016 离线语音、HC-05 蓝牙、PWM LED、OLED 等 10 个模块，完成硬件选型与焊接调试全流程。
-    \item Keil C 模块化开发，模式状态机统一协调自动、手动、远程、语音四种交互；自动模式 ADC 均值滤波分三档 PWM，红外无人关灯，距离 $\leq$ 10cm 蜂鸣器报警。
+    \item 主控 STM32F103C8T6，集成光敏 ADC、超声波测距、红外感应、离线语音、蓝牙、PWM 调光、OLED 等 10 个模块，独立完成硬件选型与焊接调试。
+    \item Keil C 模块化开发，模式状态机协调自动 / 手动 / 远程 / 语音四种交互方式。
 \end{itemize}
 
 \vspace{0.15em}
