@@ -1,0 +1,147 @@
+% !TEX program = xelatex
+\documentclass[10pt,a4paper]{article}
+
+% ======================== 基础包 ========================
+\usepackage[top=0.4cm,bottom=0.4cm,left=1.3cm,right=1.3cm]{geometry}
+\usepackage{ctex}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+
+% ======================== 颜色定义 ========================
+\definecolor{primary}{HTML}{2B4C7E}
+\definecolor{darktext}{HTML}{2D2D2D}
+\definecolor{graytext}{HTML}{666666}
+\definecolor{rulecolor}{HTML}{B0B0B0}
+
+% ======================== 超链接 ========================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    urlcolor=primary,
+    pdfauthor={徐其栋},
+    pdftitle={徐其栋 - 嵌入式/物联网工程师}
+}
+
+% ======================== 字体设置 ========================
+\setCJKmainfont{SimHei}[BoldFont=SimHei]
+\setmainfont{Segoe UI}[BoldFont=Segoe UI Bold]
+
+% ======================== 段落和间距 ========================
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+% ======================== 标题样式 ========================
+\titleformat{\section}
+    {\large\bfseries\color{primary}}
+    {}
+    {0em}
+    {}
+    [\vspace{-0.5em}{\color{rulecolor}\rule{\textwidth}{0.6pt}}\vspace{-0.2em}]
+
+\titlespacing*{\section}{0pt}{0.35em}{0.15em}
+
+% ======================== 自定义命令 ========================
+\newcommand{\projectblock}[3]{%
+    {\bfseries\color{darktext}#1}\hfill{\color{graytext}#2}\\%
+    {\small\color{graytext}#3}%
+    \vspace{0.2em}%
+}
+
+% ======================== 文档开始 ========================
+\begin{document}
+
+% ======================== 头部 ========================
+\begin{center}
+    {\fontsize{26}{32}\selectfont\bfseries\color{primary} 徐其栋}
+
+    \vspace{0.15em}
+
+    {\color{graytext}
+    \faPhone\hspace{0.3em}17268891140
+    \hspace{1.2em}
+    \faEnvelope\hspace{0.3em}\href{mailto:xqd922@outlook.com}{xqd922@outlook.com}
+    \hspace{1.2em}
+    \faGlobe\hspace{0.3em}\href{https://1001.pp.ua}{个人主页}}
+
+    \vspace{0.5em}
+
+    {\color{darktext} 求职意向：\textbf{\color{primary}嵌入式开发工程师 / 物联网工程师}}
+\end{center}
+
+\vspace{0.2em}
+{\color{rulecolor}\hrule height 0.8pt}
+
+% ======================== 教育背景 ========================
+\section{\faGraduationCap\hspace{0.4em}教育背景}
+
+{\bfseries 滇西科技师范学院}\hfill{\bfseries 物联网工程\hspace{0.3em}|\hspace{0.3em}本科}
+
+{\color{graytext} 2022.09 -- 2026.06}
+
+\vspace{0.2em}
+
+{\color{darktext}
+\textbf{主修课程：}C 语言、Python、单片机原理、嵌入式技术、计算机网络、操作系统、传感器原理、数字电子技术
+}
+
+% ======================== 专业技能 ========================
+\section{\faCogs\hspace{0.4em}专业技能}
+
+{\bfseries\color{primary}嵌入式 / 物联网：}\hspace{0.3em}{\color{darktext}STM32、ESP32、外设驱动调试、I2C、UART、MQTT、EMQX、蓝牙、Wi-Fi、FreeRTOS 初步}
+
+\vspace{2pt}
+
+{\bfseries\color{primary}编程与数据库：}\hspace{0.3em}{\color{darktext}C 语言、Python、C\#（.NET WinForms）、MySQL、SQL 参数化查询}
+
+\vspace{2pt}
+
+{\bfseries\color{primary}开发工具：}\hspace{0.3em}{\color{darktext}Keil MDK、Visual Studio、Git、Linux、嘉立创 EDA}
+
+% ======================== 项目经历 ========================
+\section{\faProjectDiagram\hspace{0.4em}项目经历}
+
+% --- 机器狗 ---
+\projectblock{四足物联网机器狗控制系统}{2025.03 -- 2025.06}{技术栈：STM32F407ZE\hspace{0.3em}|\hspace{0.3em}PCA9685\hspace{0.3em}|\hspace{0.3em}ESP32\hspace{0.3em}|\hspace{0.3em}MPU6050\hspace{0.3em}|\hspace{0.3em}WS2812\hspace{0.3em}|\hspace{0.3em}I2C\hspace{0.3em}|\hspace{0.3em}UART\hspace{0.3em}|\hspace{0.3em}运动学逆解}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item 以 STM32F407ZE（168MHz）为主控，结合 PCA9685 的 16 路 12 位 PWM 驱动 8 路舵机（四腿 $\times$ 2 关节），实现前进、后退、左右转、站立、蹲下、鞠躬、挥手等 9 类动作。
+    \item 基于余弦定理与三角函数完成腿部运动学逆解，由足尖目标坐标 $(x, y)$ 反推大小腿舵机角度，并通过步进插值算法实现舵机平滑过渡，避免机械冲击。
+    \item 搭建多通信链路：I2C 统一驱动 PCA9685 与 MPU6050；USART2 对接蓝牙实现网页遥控，UART4 对接 ESP32 完成语音识别，落地蓝牙、语音两种交互；WS2812 反馈系统状态。
+\end{itemize}
+
+\vspace{0.15em}
+
+% --- 物联网云平台与数据库整合项目（课程综合实践） ---
+\projectblock{物联网云平台数据采集与三层架构管理系统}{2025.04 -- 2025.07}{技术栈：ESP32\hspace{0.3em}|\hspace{0.3em}MQTT\hspace{0.3em}|\hspace{0.3em}EMQX\hspace{0.3em}|\hspace{0.3em}C\#\hspace{0.3em}|\hspace{0.3em}.NET WinForms\hspace{0.3em}|\hspace{0.3em}MySQL\hspace{0.3em}|\hspace{0.3em}三层架构}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item \textbf{设备接入层}：ESP32 基于 MQTT 发布/订阅模型将传感器与设备数据上报至 EMQX Broker，掌握 Topic、QoS、Keep Alive、遗嘱消息等核心机制。
+    \item \textbf{上位机层}：独立设计并实现 UI / BLL / DAL + Entity / Tools 经典三层架构 C\# 桌面端，MQTT 订阅实时数据 / Excel 批量导入双通道，支持多模板选择与列结构校验。
+    \item \textbf{数据持久化层}：DAL 封装 MySQLHelper 统一参数化查询，防止 SQL 注入；BLL 做主键查重与行级异常隔离，成功入库、失败提示；app.config 外部化连接配置支持多环境部署。
+    \item \textbf{完整链路闭环}：形成"设备采集 → 云端 Broker → 上位机三层架构 → MySQL 持久化"端到端物联网数据流，覆盖物联网云平台与网络数据库应用开发全栈能力。
+\end{itemize}
+
+\vspace{0.15em}
+
+% --- 毕业设计：智能交互台灯 ---
+\projectblock{基于 STM32 的智能交互台灯系统设计与分析}{2025.01 -- 2026.05}{技术栈：STM32F103C8T6\hspace{0.3em}|\hspace{0.3em}光敏ADC\hspace{0.3em}|\hspace{0.3em}HC-SR04\hspace{0.3em}|\hspace{0.3em}红外人体感应\hspace{0.3em}|\hspace{0.3em}SNR8016语音\hspace{0.3em}|\hspace{0.3em}HC-05蓝牙\hspace{0.3em}|\hspace{0.3em}PWM\hspace{0.3em}|\hspace{0.3em}OLED}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item 以 STM32F103C8T6（72MHz）为主控，集成光敏 ADC、HC-SR04 超声波、红外人体感应、SNR8016 离线语音、HC-05 蓝牙、PWM LED、OLED、按键与蜂鸣器共 10 个模块，完成硬件选型、电路设计与焊接调试全流程。
+    \item Keil C 语言模块化开发，主循环按"测距 → 光强采样 → 按键 → 模式判断 → 显示"周期执行，通过模式状态机统一协调自动、手动、远程和语音四种交互方式，蓝牙与语音命令共用同一套档位定义保证行为一致。
+    \item 自动模式下光敏 ADC 多次采样均值滤波后按阈值划分三档 PWM 占空比，红外无人自动关灯；HC-SR04 距离 $\leq$ 10cm 触发蜂鸣器报警。独立完成联调测试，撰写毕业论文含完整源代码附录。
+\end{itemize}
+
+\vspace{0.15em}
+
+% ======================== 个人评价 ========================
+\section{\faUser\hspace{0.4em}个人评价}
+
+2026 届物联网工程专业本科生，求职方向为嵌入式 / 物联网开发。具备 STM32、ESP32 项目实战经验，熟悉 I2C、UART、MQTT、蓝牙等通信方式，能独立完成硬件连接、驱动调试与功能验证；同时掌握 C\# + MySQL 三层架构上位机开发，具备 PCB 设计与焊接调试能力，可快速进入开发与测试工作。
+
+\end{document}
