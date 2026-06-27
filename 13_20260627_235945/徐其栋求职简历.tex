@@ -2,7 +2,7 @@
 \documentclass[10pt,a4paper]{article}
 
 % ======================== 基础包 ========================
-\usepackage[top=0.4cm,bottom=0.4cm,left=1.3cm,right=1.3cm]{geometry}
+\usepackage[top=0.3cm,bottom=0.3cm,left=1.2cm,right=1.2cm]{geometry}
 \usepackage{ctex}
 \usepackage{titlesec}
 \usepackage{enumitem}
@@ -57,9 +57,9 @@
 
 % ======================== 头部 ========================
 \begin{center}
-    {\fontsize{26}{32}\selectfont\bfseries\color{primary} 徐其栋}
+    {\fontsize{24}{28}\selectfont\bfseries\color{primary} 徐其栋}
 
-    \vspace{0.15em}
+    \vspace{0.1em}
 
     {\color{graytext}
     \faPhone\hspace{0.3em}17268891140
@@ -68,7 +68,7 @@
     \hspace{1.2em}
     \faGlobe\hspace{0.3em}\href{https://1001.pp.ua}{个人主页}}
 
-    \vspace{0.5em}
+    \vspace{0.3em}
 
     {\color{darktext} 求职意向：\textbf{\color{primary}嵌入式开发工程师 / 物联网工程师}}
 \end{center}
@@ -85,9 +85,7 @@
 
 \vspace{0.2em}
 
-{\color{darktext}
-\textbf{主修课程：}C 语言、Python、单片机原理、嵌入式技术、计算机网络、传感器原理、数字电子技术
-}
+{\color{darktext}\textbf{主修课程：}C 语言、Python、单片机原理、嵌入式技术、计算机网络、传感器原理、数字电子技术}
 
 % ======================== 专业技能 ========================
 \section{\faCogs\hspace{0.4em}专业技能}
@@ -136,7 +134,8 @@
 \projectblock{物联网云平台数据采集与三层架构管理系统}{2025.04 -- 2025.07}{技术栈：ESP32\hspace{0.3em}|\hspace{0.3em}MQTT\hspace{0.3em}|\hspace{0.3em}EMQX\hspace{0.3em}|\hspace{0.3em}C\#\hspace{0.3em}|\hspace{0.3em}.NET WinForms\hspace{0.3em}|\hspace{0.3em}MySQL\hspace{0.3em}|\hspace{0.3em}三层架构}
 
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
-    \item ESP32 基于 MQTT 上报传感器数据至 EMQX Broker；独立实现 C\# 三层架构桌面端，支持 MQTT 实时订阅与 Excel 批量导入，DAL 参数化查询防注入，端到端覆盖物联网全栈。
+    \item \textbf{设备接入层}：ESP32 基于 MQTT 将传感器数据上报至 EMQX Broker，掌握 Topic、QoS、遗嘱消息等核心机制。
+    \item \textbf{上位机 + 数据层}：独立实现 C\# 三层架构桌面端（MQTT 实时订阅 + Excel 导入双通道），DAL 参数化查询防注入，BLL 主键查重，形成"采集 → Broker → 上位机 → MySQL"端到端数据流。
 \end{itemize}
 
 \vspace{0.15em}
@@ -149,11 +148,11 @@
     \item Keil C 模块化开发，模式状态机协调自动 / 手动 / 远程 / 语音四种交互方式。
 \end{itemize}
 
-\vspace{0.15em}
+\vspace{0.1em}
 
 % ======================== 个人评价 ========================
 \section{\faUser\hspace{0.4em}个人评价}
 
-2026 届物联网工程本科毕业生，具备 STM32、ESP32 项目实战经验，熟悉 I2C、UART、MQTT、蓝牙等通信方式，能独立完成硬件连接、驱动调试与功能验证；掌握 C\# + MySQL 三层架构上位机开发与 Git 版本管理，可快速进入嵌入式开发与测试工作。
+2026 届物联网工程本科毕业生，具备 STM32、ESP32 实战经验，熟悉 I2C、UART、MQTT、蓝牙通信；掌握 C\# + MySQL 上位机开发与 Git 版本管理，可快速进入嵌入式开发与测试工作。
 
 \end{document}

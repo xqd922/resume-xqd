@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.6.27)  28 JUN 2026 00:09
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.6.27)  28 JUN 2026 00:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1126,15 +1126,15 @@ LaTeX Font Info:    ... okay on input line 56.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(36.98866pt, 523.53055pt, 36.98866pt)
-* v-part:(T,H,B)=(11.38092pt, 822.285pt, 11.38092pt)
+* h-part:(L,W,R)=(34.14322pt, 529.22144pt, 34.14322pt)
+* v-part:(T,H,B)=(8.5359pt, 827.97504pt, 8.5359pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=523.53055pt
-* \textheight=822.285pt
-* \oddsidemargin=-35.28133pt
-* \evensidemargin=-35.28133pt
-* \topmargin=-97.88907pt
+* \textwidth=529.22144pt
+* \textheight=827.97504pt
+* \oddsidemargin=-38.12677pt
+* \evensidemargin=-38.12677pt
+* \topmargin=-100.73409pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -1224,23 +1224,23 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\faPreselectedIcon' on input line 93.
+(hyperref)                removing `\faPreselectedIcon' on input line 91.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\faPreselectedIcon' on input line 106.
+(hyperref)                removing `\faPreselectedIcon' on input line 104.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\faPreselectedIcon' on input line 122.
+(hyperref)                removing `\faPreselectedIcon' on input line 120.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 128.
+(Font)              <7> on input line 126.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 128.
+(Font)              <5> on input line 126.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\faPreselectedIcon' on input line 155.
+(hyperref)                removing `\faPreselectedIcon' on input line 154.
 
 [1
 
@@ -1255,7 +1255,7 @@ Package rerunfilecheck Info: File `徐其栋求职简历.out' has not changed.
 Here is how much of TeX's memory you used:
  26545 strings out of 402987
  556821 string characters out of 5448524
- 1011413 words of memory out of 5000000
+ 1013420 words of memory out of 5000000
  54866 multiletter control sequences out of 15000+600000
  630043 words of font info for 83 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
