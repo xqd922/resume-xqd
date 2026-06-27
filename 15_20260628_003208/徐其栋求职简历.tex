@@ -94,7 +94,7 @@
 
 \vspace{2pt}
 
-{\bfseries\color{primary}编程与数据库：}\hspace{0.3em}{\color{darktext}C 语言、Python、C\#（.NET WinForms）、MySQL、SQL 参数化查询}
+{\bfseries\color{primary}编程与数据库：}\hspace{0.3em}{\color{darktext}C 语言、Python、C\#、MySQL、SQL 参数化查询}
 
 \vspace{2pt}
 
@@ -124,7 +124,7 @@
 \projectblock{四足物联网机器狗控制系统}{2025.03 -- 2025.05}{技术栈：STM32F407ZE\hspace{0.3em}|\hspace{0.3em}PCA9685\hspace{0.3em}|\hspace{0.3em}ESP32\hspace{0.3em}|\hspace{0.3em}MPU6050\hspace{0.3em}|\hspace{0.3em}WS2812\hspace{0.3em}|\hspace{0.3em}I2C\hspace{0.3em}|\hspace{0.3em}UART\hspace{0.3em}|\hspace{0.3em}运动学逆解}
 
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
-    \item 以 STM32F407ZE（168MHz）为主控，结合 PCA9685 的 16 路 12 位 PWM 驱动 8 路舵机（四腿 $\times$ 2 关节），实现前进、后退、左右转、站立、蹲下、鞠躬、挥手等 9 类动作。
+    \item 以 STM32F407ZE 为主控，结合 PCA9685 的 16 路 12 位 PWM 驱动 8 路舵机（四腿 $\times$ 2 关节），实现前进、后退、左右转、站立、蹲下、鞠躬、挥手等 9 类动作。
     \item 基于余弦定理与三角函数完成腿部运动学逆解，由足尖目标坐标 $(x, y)$ 反推大小腿舵机角度，并通过步进插值算法实现舵机平滑过渡，避免机械冲击。
     \item 搭建多通信链路：I2C 统一驱动 PCA9685 与 MPU6050；USART2 对接蓝牙实现网页遥控，UART4 对接 ESP32 完成语音识别，落地蓝牙、语音两种交互；WS2812 反馈系统状态。
 \end{itemize}
