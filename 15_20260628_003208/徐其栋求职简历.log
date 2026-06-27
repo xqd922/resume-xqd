@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.6.27)  28 JUN 2026 00:32
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.6.27)  28 JUN 2026 00:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1094,7 +1094,7 @@ Package fontspec Info:
 (fontspec)             Bold/I/OT:script=latn;language=dflt;+smcp;mapping=tex-te
 xt;"
 
-No file 徐其栋求职简历.aux.
+(徐其栋求职简历.aux)
 \openout1 = `徐其栋求职简历.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
@@ -1117,6 +1117,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
 LaTeX Font Info:    ... okay on input line 56.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 56.
 LaTeX Font Info:    ... okay on input line 56.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1212,11 +1213,10 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 56.
 Package hyperref Info: Link coloring ON on input line 56.
+(徐其栋求职简历.out) (徐其栋求职简历.out)
 \@outlinefile=\write4
 \openout4 = `徐其栋求职简历.out'.
 
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1249,21 +1249,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/07/14>
  ***********
-
-
-Package rerunfilecheck Warning: File `徐其栋求职简历.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `徐其栋求职简历.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  903A1CFAA506ED2D7BAD85F5AFC48A60;645.
+Package rerunfilecheck Info: File `徐其栋求职简历.out' has not changed.
+(rerunfilecheck)             Checksum: 903A1CFAA506ED2D7BAD85F5AFC48A60;645.
  ) 
 Here is how much of TeX's memory you used:
- 26536 strings out of 402987
- 556705 string characters out of 5448524
- 1013595 words of memory out of 5000000
- 54863 multiletter control sequences out of 15000+600000
+ 26545 strings out of 402987
+ 556821 string characters out of 5448524
+ 1014420 words of memory out of 5000000
+ 54866 multiletter control sequences out of 15000+600000
  630043 words of font info for 83 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  102i,5n,111p,399b,338s stack positions out of 10000i,1000n,20000p,200000b,200000s
