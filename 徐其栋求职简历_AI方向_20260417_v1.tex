@@ -1,0 +1,171 @@
+﻿% !TEX program = xelatex
+\documentclass[10pt,a4paper]{article}
+
+% ======================== 基础包 ========================
+\usepackage[top=0.4cm,bottom=0.4cm,left=1.3cm,right=1.3cm]{geometry}
+\usepackage{ctex}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+
+% ======================== 颜色定义 ========================
+\definecolor{primary}{HTML}{2B4C7E}
+\definecolor{darktext}{HTML}{2D2D2D}
+\definecolor{graytext}{HTML}{666666}
+\definecolor{rulecolor}{HTML}{B0B0B0}
+\definecolor{tagbg}{HTML}{ECF0F5}
+\definecolor{tagtext}{HTML}{2B4C7E}
+
+% ======================== 超链接 ========================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    urlcolor=primary,
+    pdfauthor={徐其栋},
+    pdftitle={徐其栋 - AI 应用 / 算法工程师}
+}
+
+% ======================== 字体设置 ========================
+\setCJKmainfont{SimHei}[BoldFont=SimHei]
+\setmainfont{Segoe UI}[BoldFont=Segoe UI Bold]
+
+% ======================== 段落和间距 ========================
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+% ======================== 标题样式 ========================
+\titleformat{\section}
+    {\large\bfseries\color{primary}}
+    {}
+    {0em}
+    {}
+    [\vspace{-0.5em}{\color{rulecolor}\rule{\textwidth}{0.6pt}}\vspace{-0.2em}]
+
+\titlespacing*{\section}{0pt}{0.35em}{0.15em}
+
+% ======================== 自定义命令 ========================
+\newcommand{\projectblock}[3]{%
+    {\bfseries\color{darktext}#1}\hfill{\color{graytext}#2}\\%
+    {\small\color{graytext}#3}%
+    \vspace{0.2em}%
+}
+
+% ======================== 文档开始 ========================
+\begin{document}
+
+% ======================== 头部 ========================
+\begin{center}
+    {\fontsize{26}{32}\selectfont\bfseries\color{primary} 徐其栋}
+
+    \vspace{0.15em}
+
+    {\color{graytext}
+    \faPhone\hspace{0.3em}17268891140
+    \hspace{1.2em}
+    \faEnvelope\hspace{0.3em}\href{mailto:xqd922@outlook.com}{xqd922@outlook.com}
+    \hspace{1.2em}
+    \faGlobe\hspace{0.3em}\href{https://1001.pp.ua}{个人主页}}
+
+    \vspace{0.5em}
+
+    {\color{darktext} 求职意向：\textbf{\color{primary}AI 应用工程师 / 算法工程师（初级） / AI 辅助开发}}
+\end{center}
+
+\vspace{0.2em}
+{\color{rulecolor}\hrule height 0.8pt}
+
+% ======================== 教育背景 ========================
+\section{\faGraduationCap\hspace{0.4em}教育背景}
+
+{\bfseries 滇西科技师范学院}\hfill{\bfseries 物联网工程\hspace{0.3em}|\hspace{0.3em}本科}
+
+{\color{graytext} 2022.09 -- 2026.06}
+
+\vspace{0.2em}
+
+{\color{darktext}
+\textbf{核心课程：}Python 程序设计、人工智能、图像处理、数据库应用、机器学习基础、数据结构、计算机网络
+}
+
+% ======================== 专业技能 ========================
+\section{\faCogs\hspace{0.4em}专业技能}
+
+{\bfseries\color{primary}编程语言与数据处理：}\hspace{0.3em}{\color{darktext}Python、NumPy、Pandas、Matplotlib、C 语言、SQL}
+
+\vspace{2pt}
+
+{\bfseries\color{primary}人工智能与图像处理：}\hspace{0.3em}{\color{darktext}机器学习基础、OpenCV、图像预处理、特征提取、PyTorch 入门、模型调用与推理}
+
+\vspace{2pt}
+
+{\bfseries\color{primary}LLM 与 AI 辅助开发：}\hspace{0.3em}{\color{darktext}ChatGPT、Claude、DeepSeek、Prompt Engineering、OpenAI / Claude API 调用、AI Pair Programming}
+
+\vspace{2pt}
+
+{\bfseries\color{primary}数据库与工程：}\hspace{0.3em}{\color{darktext}MySQL、三层架构、Git、Linux、Vercel 部署、Markdown / MDX 文档编写}
+
+% ======================== 项目经历 ========================
+\section{\faProjectDiagram\hspace{0.4em}项目经历}
+
+% --- 机器狗（AI 交互重写） ---
+\projectblock{具备语音识别交互的四足仿生机器狗}{2025.03 -- 2025.06}{技术栈：ESP32 语音识别\hspace{0.3em}|\hspace{0.3em}STM32\hspace{0.3em}|\hspace{0.3em}运动学逆解\hspace{0.3em}|\hspace{0.3em}多模态交互\hspace{0.3em}|\hspace{0.3em}蓝牙}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item \textbf{AI 语音交互模块}：基于 ESP32 集成离线语音识别，将"前进 / 后退 / 左转 / 挥手"等自然语言指令解析为结构化控制命令，实现语音到动作的端到端映射。
+    \item \textbf{运动智能算法}：基于余弦定理与三角函数完成腿部运动学逆解，由足尖目标坐标 $(x,y)$ 反推关节角度，配合步进插值算法实现动作平滑过渡，共计 9 类仿生动作。
+    \item \textbf{多模态交互}：打通语音识别 + 蓝牙网页遥控 + 状态灯反馈三通道交互链路，具备 AI 感知、指令理解、运动执行的完整闭环能力。
+\end{itemize}
+
+\vspace{0.15em}
+
+% --- 个人博客（AI 辅助开发重写） ---
+\projectblock{AI 辅助开发的个人技术博客}{2024.11 -- 至今}{技术栈：Next.js / React\hspace{0.3em}|\hspace{0.3em}MDX\hspace{0.3em}|\hspace{0.3em}Vercel\hspace{0.3em}|\hspace{0.3em}Claude / GPT\hspace{0.3em}|\hspace{0.3em}Prompt Engineering}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item \textbf{AI 协同开发}：以 Claude / ChatGPT 为结对编程助手，通过精细化 Prompt 设计完成 UI 组件、样式、交互与功能代码生成，显著提升开发效率。
+    \item \textbf{AI 辅助内容生产}：利用 LLM 辅助文章撰写、大纲整理、代码示例生成与图片描述，建立 Prompt 模板库沉淀常用写作与编码场景。
+    \item \textbf{工程化上线}：React + MDX 组件化内容，Git 版本管理与 Vercel 持续部署，域名 \href{https://1001.pp.ua}{1001.pp.ua} 稳定可访问，支撑个人技术沉淀与作品展示。
+\end{itemize}
+
+\vspace{0.15em}
+
+% --- 数据采集与管理系统（保留，数据处理/数据库能力） ---
+\projectblock{物联网数据采集与三层架构管理系统}{2025.04 -- 2025.07}{技术栈：ESP32\hspace{0.3em}|\hspace{0.3em}MQTT\hspace{0.3em}|\hspace{0.3em}EMQX\hspace{0.3em}|\hspace{0.3em}C\#\hspace{0.3em}|\hspace{0.3em}MySQL\hspace{0.3em}|\hspace{0.3em}三层架构}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item \textbf{数据采集}：ESP32 基于 MQTT 发布/订阅模型将设备数据上报至 EMQX Broker，掌握 Topic、QoS、LWT 等通信核心机制。
+    \item \textbf{数据处理与入库}：设计 UI / BLL / DAL 三层架构管理端，实现 MQTT 实时订阅 / Excel 批量导入双通道；DAL 统一参数化查询防 SQL 注入，BLL 做主键查重与异常隔离。
+    \item \textbf{完整数据链路}：形成"设备采集 $\to$ Broker $\to$ 管理端 $\to$ MySQL 持久化"端到端数据流水线，具备从异构数据源到结构化存储的数据工程能力。
+\end{itemize}
+
+\vspace{0.15em}
+
+% ======================== 个人评价 ========================
+\section{\faUser\hspace{0.4em}个人评价}
+
+2026 届本科生，求职方向 AI 应用 / 初级算法。熟悉 Python 数据处理栈与图像处理基础，能独立调用 PyTorch / OpenCV 完成模型推理与图像预处理；深度使用 Claude、ChatGPT 等主流 LLM 工具，擅长通过 Prompt 工程与 AI Pair Programming 加速开发；具备 MySQL 数据库、Git / Linux 工程能力，可快速进入 AI 应用研发与数据处理工作。
+
+\vspace{0.15em}
+
+% ======================== 底部标签 ========================
+\begin{center}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {Python};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {PyTorch};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {OpenCV};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {ChatGPT / Claude};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {Prompt 工程};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {MySQL};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {Git / Linux};}
+\end{center}
+
+\end{document}

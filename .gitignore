@@ -1,0 +1,23 @@
+# 构建产物
+.build_*/
+.build/
+
+# LaTeX 辅助文件
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.toc
+*.nav
+*.snm
+*.vrb
+
+# 提取的临时文本
+_extracted_document.xml
+_doc_extracted.txt
+_doc_utf8.txt
+_extracted_text.txt

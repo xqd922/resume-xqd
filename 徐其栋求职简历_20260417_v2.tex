@@ -1,0 +1,164 @@
+﻿% !TEX program = xelatex
+\documentclass[10pt,a4paper]{article}
+
+% ======================== 基础包 ========================
+\usepackage[top=0.6cm,bottom=0.6cm,left=1.5cm,right=1.5cm]{geometry}
+\usepackage{ctex}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+
+% ======================== 颜色定义 ========================
+\definecolor{primary}{HTML}{2B4C7E}
+\definecolor{darktext}{HTML}{2D2D2D}
+\definecolor{graytext}{HTML}{666666}
+\definecolor{rulecolor}{HTML}{B0B0B0}
+\definecolor{tagbg}{HTML}{ECF0F5}
+\definecolor{tagtext}{HTML}{2B4C7E}
+
+% ======================== 超链接 ========================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    urlcolor=primary,
+    pdfauthor={徐其栋},
+    pdftitle={徐其栋 - 嵌入式/物联网工程师}
+}
+
+% ======================== 字体设置 ========================
+\setCJKmainfont{SimHei}[BoldFont=SimHei]
+\setmainfont{Segoe UI}[BoldFont=Segoe UI Bold]
+
+% ======================== 段落和间距 ========================
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+% ======================== 标题样式 ========================
+\titleformat{\section}
+    {\large\bfseries\color{primary}}
+    {}
+    {0em}
+    {}
+    [\vspace{-0.5em}{\color{rulecolor}\rule{\textwidth}{0.6pt}}\vspace{-0.2em}]
+
+\titlespacing*{\section}{0pt}{0.5em}{0.25em}
+
+% ======================== 自定义命令 ========================
+\newcommand{\projectblock}[3]{%
+    {\bfseries\color{darktext}#1}\hfill{\color{graytext}#2}\\%
+    {\small\color{graytext}#3}%
+    \vspace{0.2em}%
+}
+
+% ======================== 文档开始 ========================
+\begin{document}
+\enlargethispage{2cm}
+
+% ======================== 头部 ========================
+\begin{center}
+    {\fontsize{26}{32}\selectfont\bfseries\color{primary} 徐其栋}
+
+    \vspace{0.3em}
+
+    {\color{graytext}
+    \faPhone\hspace{0.3em}17268891140
+    \hspace{1.2em}
+    \faEnvelope\hspace{0.3em}\href{mailto:xqd922@outlook.com}{xqd922@outlook.com}
+    \hspace{1.2em}
+    \faGlobe\hspace{0.3em}\href{https://1001.pp.ua}{https://1001.pp.ua}}
+
+    \vspace{0.5em}
+
+    {\color{darktext} 求职意向：\textbf{\color{primary}嵌入式开发工程师 / 物联网工程师}}
+\end{center}
+
+\vspace{0.2em}
+{\color{rulecolor}\hrule height 0.8pt}
+
+% ======================== 教育背景 ========================
+\section{\faGraduationCap\hspace{0.4em}教育背景}
+
+{\bfseries 滇西科技师范学院}\hfill{\bfseries 物联网工程\hspace{0.3em}|\hspace{0.3em}本科}
+
+{\color{graytext} 2022.09 -- 2026.06}
+
+\vspace{0.4em}
+
+{\color{darktext}
+\textbf{主修课程：}C语言、Python、单片机原理、嵌入式技术、计算机网络、操作系统、传感器原理与技术、数字电子技术
+}
+
+% ======================== 专业技能 ========================
+\section{\faCogs\hspace{0.4em}专业技能}
+
+\begin{tabular}{@{}p{5em}@{\hspace{0.5em}}l@{}}
+\textbf{编程语言} & C语言、Python \\[3pt]
+\textbf{嵌入式开发} & STM32、ESP32、外设驱动调试 \\[3pt]
+\textbf{通信与联网} & I2C、UART、MQTT、蓝牙通信 \\[3pt]
+\textbf{开发工具} & Keil MDK、Git、Linux、嘉立创EDA \\[3pt]
+\textbf{其他技能} & React、MDX、Vercel 部署
+\end{tabular}
+
+% ======================== 项目经历 ========================
+\section{\faProjectDiagram\hspace{0.4em}项目经历}
+
+% --- 机器狗 ---
+\projectblock{四足物联网机器狗控制系统}{2025.03 -- 2025.06}{技术栈：STM32F407ZE\hspace{0.3em}|\hspace{0.3em}PCA9685\hspace{0.3em}|\hspace{0.3em}ESP32\hspace{0.3em}|\hspace{0.3em}MPU6050\hspace{0.3em}|\hspace{0.3em}WS2812\hspace{0.3em}|\hspace{0.3em}I2C\hspace{0.3em}|\hspace{0.3em}UART\hspace{0.3em}|\hspace{0.3em}运动学逆解}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item 以 STM32F407ZE（168MHz）为主控，结合 PCA9685 的 16 路 12 位 PWM 驱动 8 路舵机（四腿 $\times$ 2 关节），实现前进、后退、左右转、站立、蹲下、鞠躬、挥手等 9 类动作。
+    \item 基于余弦定理与三角函数完成腿部运动学逆解，由足尖目标坐标 $(x, y)$ 反推大小腿舵机角度，并通过步进插值算法实现舵机平滑过渡，避免机械冲击。
+    \item 搭建多通信链路：I2C 统一驱动 PCA9685 与 MPU6050；USART2 对接蓝牙实现网页遥控，UART4 对接 ESP32 完成语音识别，落地蓝牙、语音两种交互；WS2812 反馈系统状态。
+\end{itemize}
+
+\vspace{0.3em}
+
+% --- MQTT 通信 ---
+\projectblock{MQTT 通信理解与实践}{2025.06 -- 2025.07}{技术栈：ESP32\hspace{0.3em}|\hspace{0.3em}MQTT\hspace{0.3em}|\hspace{0.3em}物联网通信}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item 学习并掌握 MQTT 发布/订阅模型，理解 Topic、QoS、Keep Alive、遗嘱消息等核心概念。
+    \item 结合 ESP32 开发场景，梳理设备数据上报、状态订阅与远程控制的典型通信流程。
+    \item 能基于 MQTT 完成设备与服务端的基础消息交互设计，用于物联网通信方案选型与分析。
+\end{itemize}
+
+\vspace{0.3em}
+
+% --- PCB设计 ---
+\projectblock{PCB 设计与打样实践}{2025.04 -- 2025.05}{技术栈：嘉立创EDA\hspace{0.3em}|\hspace{0.3em}焊接调试}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item 使用嘉立创EDA完成多层 PCB 原理图与电路板设计，覆盖元件布局、布线与电源管理。
+    \item 完成打样后焊接、上电测试与基础问题排查，验证电路功能可用。
+    \item 具备从原理图设计、PCB 绘制到实物调试的基础硬件开发闭环能力。
+\end{itemize}
+
+\vspace{0.3em}
+
+% ======================== 个人评价 ========================
+\section{\faUser\hspace{0.4em}个人评价}
+
+2026 届物联网工程专业本科生，求职方向为嵌入式 / 物联网开发。具备 STM32、ESP32 项目实战经验，能独立完成硬件连接、驱动调试、通信联调与功能验证；熟悉 I2C、UART、MQTT、蓝牙等常用通信方式，具备 PCB 设计与焊接调试能力，可快速进入开发与测试工作。
+
+\vspace{0.3em}
+
+% ======================== 底部标签 ========================
+\begin{center}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=6pt, text=tagtext, font=\small\bfseries] {STM32};}
+\hspace{0.3em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=6pt, text=tagtext, font=\small\bfseries] {ESP32};}
+\hspace{0.3em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=6pt, text=tagtext, font=\small\bfseries] {I2C / UART};}
+\hspace{0.3em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=6pt, text=tagtext, font=\small\bfseries] {MQTT};}
+\hspace{0.3em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=6pt, text=tagtext, font=\small\bfseries] {PCB设计};}
+\hspace{0.3em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=6pt, text=tagtext, font=\small\bfseries] {Git / Linux};}
+\end{center}
+
+\end{document}

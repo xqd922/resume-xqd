@@ -1,0 +1,171 @@
+﻿% !TEX program = xelatex
+\documentclass[10pt,a4paper]{article}
+
+% ======================== 基础包 ========================
+\usepackage[top=0.3cm,bottom=0.3cm,left=1.2cm,right=1.2cm]{geometry}
+\usepackage{ctex}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+
+% ======================== 颜色定义 ========================
+\definecolor{primary}{HTML}{2B4C7E}
+\definecolor{darktext}{HTML}{2D2D2D}
+\definecolor{graytext}{HTML}{666666}
+\definecolor{rulecolor}{HTML}{B0B0B0}
+\definecolor{tagbg}{HTML}{ECF0F5}
+\definecolor{tagtext}{HTML}{2B4C7E}
+
+% ======================== 超链接 ========================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    urlcolor=primary,
+    pdfauthor={徐其栋},
+    pdftitle={徐其栋 - AI 应用 / 算法工程师}
+}
+
+% ======================== 字体设置 ========================
+\setCJKmainfont{SimHei}[BoldFont=SimHei]
+\setmainfont{Segoe UI}[BoldFont=Segoe UI Bold]
+
+% ======================== 段落和间距 ========================
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+% ======================== 标题样式 ========================
+\titleformat{\section}
+    {\large\bfseries\color{primary}}
+    {}
+    {0em}
+    {}
+    [\vspace{-0.5em}{\color{rulecolor}\rule{\textwidth}{0.6pt}}\vspace{-0.2em}]
+
+\titlespacing*{\section}{0pt}{0.35em}{0.15em}
+
+% ======================== 自定义命令 ========================
+\newcommand{\projectblock}[3]{%
+    {\bfseries\color{darktext}#1}\hfill{\color{graytext}#2}\\%
+    {\small\color{graytext}#3}%
+    \vspace{0.2em}%
+}
+
+% ======================== 文档开始 ========================
+\begin{document}
+
+% ======================== 头部 ========================
+\begin{center}
+    {\fontsize{26}{32}\selectfont\bfseries\color{primary} 徐其栋}
+
+    \vspace{0.15em}
+
+    {\color{graytext}
+    \faPhone\hspace{0.3em}17268891140
+    \hspace{1.0em}
+    \faEnvelope\hspace{0.3em}\href{mailto:xqd922@outlook.com}{xqd922@outlook.com}
+    \hspace{1.0em}
+    \faGithub\hspace{0.3em}\href{https://github.com/xqd922}{github.com/xqd922}
+    \hspace{1.0em}
+    \faGlobe\hspace{0.3em}\href{https://1001.pp.ua}{个人主页}}
+
+    \vspace{0.5em}
+
+    {\color{darktext} 求职意向：\textbf{\color{primary}AI 应用工程师 / 算法工程师（初级） / AI 辅助开发}}
+\end{center}
+
+\vspace{0.2em}
+{\color{rulecolor}\hrule height 0.8pt}
+
+% ======================== 教育背景 ========================
+\section{\faGraduationCap\hspace{0.4em}教育背景}
+
+{\bfseries 滇西科技师范学院}\hfill{\bfseries 物联网工程\hspace{0.3em}|\hspace{0.3em}本科}
+
+{\color{graytext} 2022.09 -- 2026.06}
+
+\vspace{0.2em}
+
+{\color{darktext}
+\textbf{核心课程：}Python 程序设计、人工智能、图像处理、数据库应用、机器学习基础
+}
+
+% ======================== 专业技能 ========================
+\section{\faCogs\hspace{0.4em}专业技能}
+
+{\bfseries\color{primary}编程与数据：}\hspace{0.3em}{\color{darktext}Python、NumPy、Pandas、Matplotlib、scikit-learn}
+
+\vspace{2pt}
+
+{\bfseries\color{primary}机器学习与深度学习：}\hspace{0.3em}{\color{darktext}KNN、SVM、朴素贝叶斯、全连接神经网络、Keras / TensorFlow}
+
+\vspace{2pt}
+
+{\bfseries\color{primary}图像处理与 LLM：}\hspace{0.3em}{\color{darktext}OpenCV、OpenAI / Claude API、Prompt 工程、Claude Skills}
+
+\vspace{2pt}
+
+{\bfseries\color{primary}前端与工程：}\hspace{0.3em}{\color{darktext}Next.js、React、TypeScript、MDX、Vercel、Git、Linux、MySQL}
+
+% ======================== 项目经历 ========================
+\section{\faProjectDiagram\hspace{0.4em}项目经历}
+
+% --- ML & DL 综合实战（主打项目） ---
+\projectblock{Python 机器学习与深度学习综合实战}{2025.05 -- 2025.06}{技术栈：Python\hspace{0.3em}|\hspace{0.3em}scikit-learn\hspace{0.3em}|\hspace{0.3em}Keras\hspace{0.3em}|\hspace{0.3em}TensorFlow\hspace{0.3em}|\hspace{0.3em}NumPy / Pandas}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item 使用 scikit-learn 在 Iris 数据集上实现 KNN 与 SVM 双分类器，测试准确率均达 100\%。
+    \item 独立从零实现朴素贝叶斯分类器并与 sklearn 库版本对比，熟悉精确率 / 召回率 / F1 多指标评估。
+    \item 使用 Keras 搭建 128-64 双隐藏层全连接神经网络完成 MNIST 手写数字识别，覆盖数据预处理、训练、评估与可视化。
+\end{itemize}
+
+\vspace{0.15em}
+
+% --- 个人博客 ---
+\projectblock{AI 辅助开发的个人技术博客}{2024.11 -- 至今}{技术栈：Next.js 15\hspace{0.3em}|\hspace{0.3em}React 19\hspace{0.3em}|\hspace{0.3em}TypeScript\hspace{0.3em}|\hspace{0.3em}MDX\hspace{0.3em}|\hspace{0.3em}Vercel\hspace{0.3em}|\hspace{0.3em}Claude / GPT API}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item 独立使用 Next.js + TypeScript + MDX + Tailwind 开发个人博客，Vercel 持续部署，源码 \href{https://github.com/xqd922/blog}{github.com/xqd922/blog}，访问 \href{https://1001.pp.ua}{1001.pp.ua}。
+    \item 以 Claude Code / ChatGPT 为结对开发助手，实际调用 OpenAI / Claude API 完成文本生成与代码辅助，熟悉 Prompt 工程与 Claude Skills 工作流。
+\end{itemize}
+
+\vspace{0.15em}
+
+% --- 数字图像处理综合实践 ---
+\projectblock{数字图像处理综合实践（车牌图像增强）}{2025.05}{技术栈：Python\hspace{0.3em}|\hspace{0.3em}OpenCV\hspace{0.3em}|\hspace{0.3em}NumPy\hspace{0.3em}|\hspace{0.3em}拉普拉斯锐化}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item 5 人小组完成车牌图像修复流水线，独立负责图像模糊改善模块，基于 OpenCV 实现拉普拉斯锐化核的二维卷积。
+    \item 与中值滤波去噪、直方图均衡化提亮模块级联，形成完整图像增强流水线，熟悉 OpenCV 图像 I/O 与核卷积处理。
+\end{itemize}
+
+\vspace{0.15em}
+
+% ======================== 个人评价 ========================
+\section{\faUser\hspace{0.4em}个人评价}
+
+2026 届本科生，求职方向 AI 应用 / 初级算法。熟悉 Python 数据科学栈，独立完成过经典机器学习、深度学习与图像处理项目；实际使用 OpenAI / Claude API 并熟练 Prompt 工程；具备 Next.js 前端开发能力，可快速进入 AI 应用研发工作。
+
+\vspace{0.15em}
+
+% ======================== 底部标签 ========================
+\begin{center}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {Python};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {scikit-learn};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {Keras / TF};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {OpenCV};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {Claude / GPT API};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {Prompt 工程};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {Next.js / TS};}
+\end{center}
+
+\end{document}

@@ -1,0 +1,171 @@
+﻿% !TEX program = xelatex
+\documentclass[10pt,a4paper]{article}
+
+% ======================== 基础包 ========================
+\usepackage[top=0.4cm,bottom=0.4cm,left=1.3cm,right=1.3cm]{geometry}
+\usepackage{ctex}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+
+% ======================== 颜色定义 ========================
+\definecolor{primary}{HTML}{2B4C7E}
+\definecolor{darktext}{HTML}{2D2D2D}
+\definecolor{graytext}{HTML}{666666}
+\definecolor{rulecolor}{HTML}{B0B0B0}
+\definecolor{tagbg}{HTML}{ECF0F5}
+\definecolor{tagtext}{HTML}{2B4C7E}
+
+% ======================== 超链接 ========================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    urlcolor=primary,
+    pdfauthor={徐其栋},
+    pdftitle={徐其栋 - AI 应用 / 算法工程师}
+}
+
+% ======================== 字体设置 ========================
+\setCJKmainfont{SimHei}[BoldFont=SimHei]
+\setmainfont{Segoe UI}[BoldFont=Segoe UI Bold]
+
+% ======================== 段落和间距 ========================
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+% ======================== 标题样式 ========================
+\titleformat{\section}
+    {\large\bfseries\color{primary}}
+    {}
+    {0em}
+    {}
+    [\vspace{-0.5em}{\color{rulecolor}\rule{\textwidth}{0.6pt}}\vspace{-0.2em}]
+
+\titlespacing*{\section}{0pt}{0.35em}{0.15em}
+
+% ======================== 自定义命令 ========================
+\newcommand{\projectblock}[3]{%
+    {\bfseries\color{darktext}#1}\hfill{\color{graytext}#2}\\%
+    {\small\color{graytext}#3}%
+    \vspace{0.2em}%
+}
+
+% ======================== 文档开始 ========================
+\begin{document}
+
+% ======================== 头部 ========================
+\begin{center}
+    {\fontsize{26}{32}\selectfont\bfseries\color{primary} 徐其栋}
+
+    \vspace{0.15em}
+
+    {\color{graytext}
+    \faPhone\hspace{0.3em}17268891140
+    \hspace{1.2em}
+    \faEnvelope\hspace{0.3em}\href{mailto:xqd922@outlook.com}{xqd922@outlook.com}
+    \hspace{1.2em}
+    \faGlobe\hspace{0.3em}\href{https://1001.pp.ua}{个人主页}}
+
+    \vspace{0.5em}
+
+    {\color{darktext} 求职意向：\textbf{\color{primary}AI 应用工程师 / 算法工程师（初级） / AI 辅助开发}}
+\end{center}
+
+\vspace{0.2em}
+{\color{rulecolor}\hrule height 0.8pt}
+
+% ======================== 教育背景 ========================
+\section{\faGraduationCap\hspace{0.4em}教育背景}
+
+{\bfseries 滇西科技师范学院}\hfill{\bfseries 物联网工程\hspace{0.3em}|\hspace{0.3em}本科}
+
+{\color{graytext} 2022.09 -- 2026.06}
+
+\vspace{0.2em}
+
+{\color{darktext}
+\textbf{核心课程：}Python 程序设计、人工智能、图像处理、数据库应用、机器学习基础、数据结构、计算机网络
+}
+
+% ======================== 专业技能 ========================
+\section{\faCogs\hspace{0.4em}专业技能}
+
+{\bfseries\color{primary}编程语言与数据处理：}\hspace{0.3em}{\color{darktext}Python、NumPy、OpenCV、Matplotlib、C 语言、SQL}
+
+\vspace{2pt}
+
+{\bfseries\color{primary}人工智能与图像处理：}\hspace{0.3em}{\color{darktext}中值滤波、直方图均衡化、拉普拉斯锐化、二维卷积、图像增强流水线、人工智能课程基础}
+
+\vspace{2pt}
+
+{\bfseries\color{primary}LLM 与 AI 辅助开发：}\hspace{0.3em}{\color{darktext}ChatGPT、Claude、DeepSeek、Prompt Engineering、AI Pair Programming 提升开发效率}
+
+\vspace{2pt}
+
+{\bfseries\color{primary}数据库与工程：}\hspace{0.3em}{\color{darktext}MySQL、Git、Linux、Vercel 部署、Markdown / MDX 文档编写}
+
+% ======================== 项目经历 ========================
+\section{\faProjectDiagram\hspace{0.4em}项目经历}
+
+% --- 机器狗（AI 交互重写） ---
+\projectblock{具备语音识别交互的四足仿生机器狗}{2025.03 -- 2025.06}{技术栈：ESP32 语音识别\hspace{0.3em}|\hspace{0.3em}STM32\hspace{0.3em}|\hspace{0.3em}运动学逆解\hspace{0.3em}|\hspace{0.3em}多模态交互\hspace{0.3em}|\hspace{0.3em}蓝牙}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item \textbf{AI 语音交互模块}：基于 ESP32 集成语音识别模块，将"前进 / 后退 / 左转 / 挥手"等自然语言指令解析为结构化控制命令，实现语音到动作的端到端映射。
+    \item \textbf{运动智能算法}：基于余弦定理与三角函数完成腿部运动学逆解，由足尖目标坐标 $(x,y)$ 反推关节角度，配合步进插值算法实现动作平滑过渡，共计 9 类仿生动作。
+    \item \textbf{多模态交互}：打通语音识别 + 蓝牙网页遥控 + 状态灯反馈三通道交互链路，具备 AI 感知、指令理解、运动执行的完整闭环能力。
+\end{itemize}
+
+\vspace{0.15em}
+
+% --- 个人博客（AI 辅助开发重写） ---
+\projectblock{AI 辅助开发的个人技术博客}{2024.11 -- 至今}{技术栈：Next.js / React\hspace{0.3em}|\hspace{0.3em}MDX\hspace{0.3em}|\hspace{0.3em}Vercel\hspace{0.3em}|\hspace{0.3em}Claude / GPT\hspace{0.3em}|\hspace{0.3em}Prompt Engineering}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item \textbf{AI 协同开发}：以 Claude / ChatGPT 为结对编程助手，通过精细化 Prompt 设计完成 UI 组件、样式、交互与功能代码生成，显著提升个人开发效率。
+    \item \textbf{AI 辅助内容生产}：利用 LLM 辅助文章撰写、大纲整理、代码示例生成与图片描述，熟练掌握与主流 AI 工具高效协作的使用方法。
+    \item \textbf{工程化上线}：基于 React + MDX 组件化内容，Git 版本管理与 Vercel 持续部署，域名 \href{https://1001.pp.ua}{1001.pp.ua} 稳定可访问，作为个人技术沉淀与作品展示窗口。
+\end{itemize}
+
+\vspace{0.15em}
+
+% --- 数字图像处理综合实践项目（真实小组课程项目） ---
+\projectblock{数字图像处理综合实践（车牌图像增强小组项目）}{2025.05}{技术栈：Python\hspace{0.3em}|\hspace{0.3em}OpenCV\hspace{0.3em}|\hspace{0.3em}NumPy\hspace{0.3em}|\hspace{0.3em}中值滤波\hspace{0.3em}|\hspace{0.3em}直方图均衡化\hspace{0.3em}|\hspace{0.3em}拉普拉斯锐化}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item \textbf{协作与分工}：5 人小组完成车牌图像修复流水线（椒盐噪声去除 $\to$ 暗处细节增强 $\to$ 模糊锐化），独立负责\textbf{图像模糊改善}模块的算法原理、代码实现与效果评估。
+    \item \textbf{拉普拉斯锐化算法实现}：基于 OpenCV 的 \texttt{cv2.filter2D} 实现 3$\times$3 拉普拉斯锐化核（中心系数 $+5$）的二维卷积，强化图像边缘与高频细节，显著提升车牌字符可识别度。
+    \item \textbf{流水线协同}：与中值滤波去噪、直方图均衡化提亮模块级联对接，形成多算法图像增强流水线；熟悉 OpenCV 图像 I/O、灰度转换、核卷积与结果对比分析全流程。
+\end{itemize}
+
+\vspace{0.15em}
+
+% ======================== 个人评价 ========================
+\section{\faUser\hspace{0.4em}个人评价}
+
+2026 届本科生，求职方向 AI 应用 / 初级算法。熟悉 Python 与 OpenCV 图像处理，独立完成过拉普拉斯锐化等经典图像增强算法落地；深度使用 Claude、ChatGPT 等主流 LLM 工具，擅长通过 Prompt 工程与 AI Pair Programming 加速开发；具备 MySQL 数据库、Git / Linux 与前端部署能力，可快速进入 AI 应用研发与数据处理工作。
+
+\vspace{0.15em}
+
+% ======================== 底部标签 ========================
+\begin{center}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {Python};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {OpenCV};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {图像处理};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {ChatGPT / Claude};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {Prompt 工程};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {MySQL};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {Git / Linux};}
+\end{center}
+
+\end{document}

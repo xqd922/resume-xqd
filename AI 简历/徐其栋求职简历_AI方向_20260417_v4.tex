@@ -1,0 +1,171 @@
+﻿% !TEX program = xelatex
+\documentclass[10pt,a4paper]{article}
+
+% ======================== 基础包 ========================
+\usepackage[top=0.3cm,bottom=0.3cm,left=1.2cm,right=1.2cm]{geometry}
+\usepackage{ctex}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+
+% ======================== 颜色定义 ========================
+\definecolor{primary}{HTML}{2B4C7E}
+\definecolor{darktext}{HTML}{2D2D2D}
+\definecolor{graytext}{HTML}{666666}
+\definecolor{rulecolor}{HTML}{B0B0B0}
+\definecolor{tagbg}{HTML}{ECF0F5}
+\definecolor{tagtext}{HTML}{2B4C7E}
+
+% ======================== 超链接 ========================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    urlcolor=primary,
+    pdfauthor={徐其栋},
+    pdftitle={徐其栋 - AI 应用 / 算法工程师}
+}
+
+% ======================== 字体设置 ========================
+\setCJKmainfont{SimHei}[BoldFont=SimHei]
+\setmainfont{Segoe UI}[BoldFont=Segoe UI Bold]
+
+% ======================== 段落和间距 ========================
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+% ======================== 标题样式 ========================
+\titleformat{\section}
+    {\large\bfseries\color{primary}}
+    {}
+    {0em}
+    {}
+    [\vspace{-0.5em}{\color{rulecolor}\rule{\textwidth}{0.6pt}}\vspace{-0.2em}]
+
+\titlespacing*{\section}{0pt}{0.35em}{0.15em}
+
+% ======================== 自定义命令 ========================
+\newcommand{\projectblock}[3]{%
+    {\bfseries\color{darktext}#1}\hfill{\color{graytext}#2}\\%
+    {\small\color{graytext}#3}%
+    \vspace{0.2em}%
+}
+
+% ======================== 文档开始 ========================
+\begin{document}
+
+% ======================== 头部 ========================
+\begin{center}
+    {\fontsize{26}{32}\selectfont\bfseries\color{primary} 徐其栋}
+
+    \vspace{0.15em}
+
+    {\color{graytext}
+    \faPhone\hspace{0.3em}17268891140
+    \hspace{1.0em}
+    \faEnvelope\hspace{0.3em}\href{mailto:xqd922@outlook.com}{xqd922@outlook.com}
+    \hspace{1.0em}
+    \faGithub\hspace{0.3em}\href{https://github.com/xqd922}{github.com/xqd922}
+    \hspace{1.0em}
+    \faGlobe\hspace{0.3em}\href{https://1001.pp.ua}{个人主页}}
+
+    \vspace{0.5em}
+
+    {\color{darktext} 求职意向：\textbf{\color{primary}AI 应用工程师 / 算法工程师（初级） / AI 辅助开发}}
+\end{center}
+
+\vspace{0.2em}
+{\color{rulecolor}\hrule height 0.8pt}
+
+% ======================== 教育背景 ========================
+\section{\faGraduationCap\hspace{0.4em}教育背景}
+
+{\bfseries 滇西科技师范学院}\hfill{\bfseries 物联网工程\hspace{0.3em}|\hspace{0.3em}本科}
+
+{\color{graytext} 2022.09 -- 2026.06}
+
+\vspace{0.2em}
+
+{\color{darktext}
+\textbf{核心课程：}Python 程序设计、人工智能、图像处理、数据库应用、机器学习基础
+}
+
+% ======================== 专业技能 ========================
+\section{\faCogs\hspace{0.4em}专业技能}
+
+{\bfseries\color{primary}编程与数据科学：}\hspace{0.3em}{\color{darktext}Python、NumPy、Pandas、Matplotlib、Seaborn、scikit-learn、C 语言、SQL}
+
+\vspace{2pt}
+
+{\bfseries\color{primary}机器学习 / 深度学习 / CV：}\hspace{0.3em}{\color{darktext}KNN、SVM、朴素贝叶斯、全连接神经网络、Keras、TensorFlow、OpenCV、图像增强流水线、模型评估（精确率 / 召回率 / F1）}
+
+\vspace{2pt}
+
+{\bfseries\color{primary}LLM 与 AI 工程：}\hspace{0.3em}{\color{darktext}ChatGPT、Claude、DeepSeek、OpenAI / Claude API 调用、Prompt Engineering、Claude Code Skills、AI Pair Programming}
+
+\vspace{2pt}
+
+{\bfseries\color{primary}前端与工程：}\hspace{0.3em}{\color{darktext}Next.js 15、React 19、TypeScript、MDX、Tailwind CSS、Vercel、Git、Linux、MySQL}
+
+% ======================== 项目经历 ========================
+\section{\faProjectDiagram\hspace{0.4em}项目经历}
+
+% --- ML & DL 综合实战（主打项目） ---
+\projectblock{Python 机器学习与深度学习综合实战项目}{2025.05 -- 2025.06}{技术栈：Python\hspace{0.3em}|\hspace{0.3em}scikit-learn\hspace{0.3em}|\hspace{0.3em}Keras\hspace{0.3em}|\hspace{0.3em}TensorFlow\hspace{0.3em}|\hspace{0.3em}NumPy\hspace{0.3em}|\hspace{0.3em}Pandas\hspace{0.3em}|\hspace{0.3em}Matplotlib\hspace{0.3em}|\hspace{0.3em}Seaborn}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item \textbf{经典分类算法（Iris 鸢尾花数据集）}：基于 StandardScaler 标准化与 70 / 30 train-test split，分别实现 KNN（K=5）与 SVM（线性核）双分类器，使用 \texttt{classification\_report} 输出精确率 / 召回率 / F1，\textbf{测试准确率均达 100\%}；pairplot 散点矩阵可视化特征分布。
+    \item \textbf{朴素贝叶斯双实现与模型对比}：从零实现\textbf{朴素贝叶斯分类器底层算法}（后验概率 + 最大似然决策），并与 scikit-learn 的 MultinomialNB / GaussianNB 对比；One-Hot 编码处理离散特征，掌握类别不平衡下的多指标评估逻辑。
+    \item \textbf{全连接神经网络（MNIST 手写数字识别）}：基于 Keras + TensorFlow 搭建\textbf{ 128-64 双隐藏层 MLP}（ReLU + Softmax），完成图像归一化与 One-Hot 标签编码，训练中可视化 accuracy / loss 曲线；覆盖数据预处理 $\to$ 模型训练 $\to$ 指标评估 $\to$ 可视化完整 ML 流水线。
+\end{itemize}
+
+\vspace{0.15em}
+
+% --- 个人博客（AI 辅助开发重写） ---
+\projectblock{AI 辅助开发的个人技术博客}{2024.11 -- 至今}{技术栈：Next.js 15\hspace{0.3em}|\hspace{0.3em}React 19\hspace{0.3em}|\hspace{0.3em}TypeScript\hspace{0.3em}|\hspace{0.3em}MDX\hspace{0.3em}|\hspace{0.3em}Tailwind CSS\hspace{0.3em}|\hspace{0.3em}Vercel\hspace{0.3em}|\hspace{0.3em}Claude / GPT API}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item \textbf{AI 协同开发 + API 集成}：以 Claude Code / ChatGPT 为结对编程助手，通过 Prompt 工程与 Claude Skills 高效完成组件与样式开发；实际使用 OpenAI / Claude API 完成文本生成、摘要、代码辅助等调用，熟悉 temperature、max\_tokens、system prompt 与流式响应处理。
+    \item \textbf{工程化上线}：基于 Next.js 15 + React 19 + TypeScript + MDX 构建静态博客，Tailwind + Framer Motion 样式与动画，Vercel 持续部署；源码托管 \href{https://github.com/xqd922/blog}{github.com/xqd922/blog}，访问域名 \href{https://1001.pp.ua}{1001.pp.ua}。
+\end{itemize}
+
+\vspace{0.15em}
+
+% --- 数字图像处理综合实践项目（真实小组课程项目） ---
+\projectblock{数字图像处理综合实践（车牌图像增强小组项目）}{2025.05}{技术栈：Python\hspace{0.3em}|\hspace{0.3em}OpenCV\hspace{0.3em}|\hspace{0.3em}NumPy\hspace{0.3em}|\hspace{0.3em}中值滤波\hspace{0.3em}|\hspace{0.3em}直方图均衡化\hspace{0.3em}|\hspace{0.3em}拉普拉斯锐化}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item \textbf{小组协作 + 拉普拉斯锐化实现}：5 人小组完成车牌图像修复流水线，独立负责\textbf{图像模糊改善}模块；基于 OpenCV 的 \texttt{cv2.filter2D} 实现 3$\times$3 拉普拉斯锐化核（中心系数 $+5$）的二维卷积，强化边缘与高频细节。
+    \item \textbf{流水线协同}：与中值滤波去噪、直方图均衡化提亮模块级联，形成多算法图像增强流水线；熟悉 OpenCV 图像 I/O、灰度转换、核卷积与结果对比分析全流程。
+\end{itemize}
+
+\vspace{0.15em}
+
+% ======================== 个人评价 ========================
+\section{\faUser\hspace{0.4em}个人评价}
+
+2026 届本科生，求职方向 AI 应用 / 初级算法。掌握 Python 数据科学全栈，独立完成 KNN、SVM、朴素贝叶斯（手写+库双实现）、Keras 全连接神经网络与 OpenCV 图像处理等 ML / DL / CV 项目；实际使用 OpenAI / Claude API，熟练 Prompt 工程与 Claude Skills；具备 Next.js + TypeScript 前端工程能力，可快速进入 AI 应用研发。
+
+\vspace{0.15em}
+
+% ======================== 底部标签 ========================
+\begin{center}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {Python};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {scikit-learn};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {Keras / TF};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {OpenCV};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {Claude / GPT API};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {Prompt 工程};}
+\hspace{0.2em}
+\tikz{\node[fill=tagbg, rounded corners=3pt, inner sep=5pt, text=tagtext, font=\small\bfseries] {Next.js / TS};}
+\end{center}
+
+\end{document}
