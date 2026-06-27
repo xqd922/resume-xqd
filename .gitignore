@@ -16,8 +16,3 @@
 *.snm
 *.vrb
 
-# 提取的临时文本
-_extracted_document.xml
-_doc_extracted.txt
-_doc_utf8.txt
-_extracted_text.txt
