@@ -4,8 +4,6 @@
 
 # LaTeX 辅助文件
 *.aux
-*.log
-*.out
 *.fls
 *.fdb_latexmk
 *.synctex.gz
