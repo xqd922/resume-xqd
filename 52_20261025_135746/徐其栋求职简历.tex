@@ -1,0 +1,141 @@
+% !TEX program = xelatex
+\documentclass[10pt,a4paper]{article}
+
+% ======================== 基础包 ========================
+\usepackage[top=0.5cm,bottom=0.3cm,left=1.0cm,right=1.0cm]{geometry}
+\usepackage{ctex}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+
+% ======================== 颜色定义 ========================
+\definecolor{primary}{HTML}{2B4C7E}
+\definecolor{darktext}{HTML}{2D2D2D}
+\definecolor{graytext}{HTML}{666666}
+\definecolor{rulecolor}{HTML}{B0B0B0}
+\definecolor{photoframe}{HTML}{8C99AD}
+
+% ======================== 超链接 ========================
+\hypersetup{
+    colorlinks=true, linkcolor=primary, urlcolor=primary,
+    pdfauthor={徐其栋}, pdftitle={徐其栋 - 求职简历}
+}
+
+% ======================== 字体设置 ========================
+\setCJKmainfont{SimHei}[BoldFont=SimHei]
+\setmainfont{Segoe UI}[BoldFont=Segoe UI]
+
+% ======================== 段落和间距 ========================
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+% ======================== 标题样式 ========================
+\titleformat{\section}
+    {\large\bfseries\color{primary}}
+    {}{0em}{}
+    [\vspace{-0.5em}{\color{rulecolor}\rule{\textwidth}{0.6pt}}\vspace{-0.2em}]
+\titlespacing*{\section}{0pt}{0.5em}{0.28em}
+
+% ======================== 自定义命令 ========================
+\newcommand{\projectblock}[3]{%
+    {\bfseries\color{darktext}#1}\hfill{\color{graytext}#2}\\%
+    {\small\color{graytext}#3}%
+    \vspace{0.15em}%
+}
+
+% ======================== 文档开始 ========================
+\begin{document}
+
+% ======================== 头部：左信息 + 右照片 ========================
+\begin{minipage}[b]{0.72\textwidth}
+    {\fontsize{25}{30}\selectfont\bfseries\color{primary}徐其栋}\\[10pt]
+    {\small\color{primary}%
+    \faBirthdayCake\hspace{0.35em}23 岁\hspace{0.75em}{\color{rulecolor}·}\hspace{0.75em}%
+    \faUserGraduate\hspace{0.35em}2026 届应届生\hspace{0.75em}{\color{rulecolor}·}\hspace{0.75em}%
+    \faYenSign\hspace{0.35em}期望薪资 4K--7K}\\[7pt]
+    {\small\color{graytext}%
+    \faPhone\hspace{0.35em}17268891140\hspace{0.75em}{\color{rulecolor}/}\hspace{0.75em}%
+    \faEnvelope\hspace{0.35em}\href{mailto:xqd922@outlook.com}{xqd922@outlook.com}\hspace{0.75em}{\color{rulecolor}/}\hspace{0.75em}%
+    \faGlobe\hspace{0.35em}\href{https://1001.pp.ua}{1001.pp.ua}}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.25\textwidth}
+    \raggedleft
+    {\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.7pt}%
+     \color{photoframe}\fbox{\includegraphics[height=2.7cm]{photo.jpg}}}
+\end{minipage}
+
+\vspace{2pt}
+{\color{primary}\rule{\textwidth}{1.1pt}}
+
+% ======================== 教育背景 ========================
+\section{\faGraduationCap\hspace{0.4em}教育背景}
+
+{\bfseries 滇西科技师范学院}\hspace{0.7em}{\color{graytext}2022.09 -- 2026.07}\hfill{\bfseries 物联网工程\hspace{0.3em}|\hspace{0.3em}本科}
+
+\vspace{0.2em}
+
+{\color{darktext}\textbf{主修课程：}C 语言、单片机原理、嵌入式技术、计算机网络、传感器原理、数字电子技术、模拟电子技术}
+
+% ======================== 专业技能 ========================
+\section{\faCogs\hspace{0.4em}专业技能}
+
+{\bfseries\color{primary}编程语言与平台：}\hspace{0.3em}{\color{darktext}C 语言、C++、Python、STM32F1 / F4、HAL 库、STM32CubeMX}
+
+\vspace{2pt}
+
+{\bfseries\color{primary}外设与通信：}\hspace{0.3em}{\color{darktext}GPIO、UART、I2C、ADC、TIM / PWM、中断、蓝牙、外设驱动调试}
+
+\vspace{2pt}
+
+{\bfseries\color{primary}硬件与调试：}\hspace{0.3em}{\color{darktext}原理图设计、PCB Layout、嘉立创 EDA、示波器、Keil MDK、Git}
+
+% ======================== 实习经历 ========================
+\section{\faBriefcase\hspace{0.4em}实习经历}
+
+{\bfseries 云南航天工程物探检测股份有限公司}\hfill{\color{graytext}嵌入式软件开发实习生\hspace{0.3em}·\hspace{0.3em}2025.08 -- 2025.12}
+
+{\small\color{graytext}业务场景：隧道 / 桥梁 / 路面工程检测设备\hspace{0.3em}|\hspace{0.3em}MCU 嵌入式软件\hspace{0.3em}|\hspace{0.3em}C/C++\hspace{0.3em}|\hspace{0.3em}外设驱动\hspace{0.3em}|\hspace{0.3em}传感器采集\hspace{0.3em}|\hspace{0.3em}软硬件联调\hspace{0.3em}|\hspace{0.3em}Git}
+
+\vspace{2pt}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=1pt, parsep=0pt, topsep=2pt]
+    \item \textbf{采集节点固件开发}：基于 MCU 平台使用 C/C++ 开发检测设备采集节点固件，完成传感器外设驱动与数据的采集、滤波、处理，把原始信号处理成可直接使用的检测数据。
+    \item \textbf{检测数据显示与人机交互}：实现检测数据的实时显示与设备操作界面，按现场作业流程调整操作步骤，减少单次检测的重复操作。
+    \item \textbf{联调与问题定位}：参与设备软硬件联调，排查并修复程序缺陷与通信异常，定位问题时按信号、通信、程序逐层缩小范围；使用 Git 进行分支管理与版本迭代。
+\end{itemize}
+
+{\bfseries 杭州泰白科技有限公司}\hfill{\color{graytext}机器人软件实习生\hspace{0.3em}·\hspace{0.3em}2026.05 -- 2026.09}
+
+{\small\color{graytext}业务场景：宇树 Go2 四足机器人\hspace{0.3em}|\hspace{0.3em}ROS 2\hspace{0.3em}|\hspace{0.3em}Nav2 / SLAM\hspace{0.3em}|\hspace{0.3em}自主导航巡检\hspace{0.3em}|\hspace{0.3em}C++ / Python\hspace{0.3em}|\hspace{0.3em}真机联调\hspace{0.3em}|\hspace{0.3em}Linux}
+
+\vspace{2pt}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=0.5pt, parsep=0pt, topsep=2pt]
+    \item \textbf{自主巡检系统开发}：基于宇树 Go2 官方 SDK 与 ROS 2 搭建建图、导航（Nav2 / AMCL）与航点巡检全链路，完成雷达时间戳对齐、零点与地面回波剔除、10 帧位姿补偿累积，扫描稳定 16Hz；按 YAML 点位顺序自主巡航，支持圈数、返航、暂停 / 恢复与失败重试，到点精度 0.3m，语音播报，RViz 显示点位状态。
+    \item \textbf{运动桥接与安全机制}：订阅官方运动状态合成里程计、TF 与 IMU 供 Nav2 定位，将导航速度指令限幅后转为官方 MOVE 请求驱动狗体；实现前方 30\textdegree{} 锥内三档减速 / 停车 / 急停、扫描断流 1s 停车、指令断流 0.5s 自动刹车与低电量 20\% 自动返航；真机实测障碍前 0.41m 稳定停车、急停后外力推挤仍保持停止，0.25m/s 以上稳定出步。
+\end{itemize}
+
+% ======================== 项目经历 ========================
+\section{\faProjectDiagram\hspace{0.4em}项目经历}
+
+\projectblock{四足物联网机器狗控制系统}{2025.03 -- 2025.04}{技术栈：STM32F407ZE\hspace{0.3em}|\hspace{0.3em}PCA9685\hspace{0.3em}|\hspace{0.3em}MPU6050\hspace{0.3em}|\hspace{0.3em}ESP32\hspace{0.3em}|\hspace{0.3em}WS2812\hspace{0.3em}|\hspace{0.3em}I2C / UART\hspace{0.3em}|\hspace{0.3em}二维逆运动学}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=1pt, parsep=0pt, topsep=2pt]
+    \item \textbf{多舵机运动控制}：用 STM32F407ZE 通过 I2C 控制 PCA9685，扩展出 16 路 12 位 PWM，驱动四条腿共 8 个舵机关节，实现站立、前进、后退、转向等 9 种动作与姿态。
+    \item \textbf{逆运动学与平滑控制}：把腿简化为大腿、小腿两根连杆，由足端目标坐标 $(x, y)$ 反算两个关节角度；加入目标位置能否到达的判断和 0\textdegree--180\textdegree{} 角度限制，并把目标角度按 1\textdegree{} 一步拆开下发，避免舵机突然大角度转动造成的抖动。
+    \item \textbf{姿态检测与多模交互}：通过 I2C 读取 MPU6050 的三轴加速度和角速度，判断机器狗是否倾倒并反馈状态；USART2 接蓝牙模块、由网页端下发动作指令，ESP32 经 UART4 接入语音控制，WS2812 灯显示当前运行状态。
+\end{itemize}
+
+\vspace{0.15em}
+
+% ======================== 个人评价 ========================
+\section{\faUser\hspace{0.4em}个人评价}
+
+性格踏实、积极主动，有较强的 \textbf{上进心与自驱力}，抗压能力好、\textbf{可接受加班、服从安排}；对嵌入式开发有浓厚兴趣，能快速融入团队，希望在该方向长期深耕、与公司共同成长。
+
+\end{document}
